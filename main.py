@@ -10,8 +10,8 @@ start = 0
 time_window = 1000
 start_time = 0
 error = 0
-b1 = 'r'
-b2 = 't'
+b1 = 'z'
+b2 = 'x'
 bpm = 180
 late = 0
 restart = True
@@ -149,8 +149,8 @@ def get_bpm():
 
 def create_default_config(filename):
     with open(filename, 'w') as f:
-        f.write("e\n")
-        f.write("r\n")
+        f.write("z\n")
+        f.write("x\n")
         f.write("180\n")
         f.write("30\n")
         f.write("q\n")
