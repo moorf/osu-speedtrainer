@@ -74,7 +74,7 @@ def check_for_keys(e):
     
     if e.event_type == keyboard.KEY_DOWN:
     
-        if start == 0:
+        if start == 0 and e.name == b1 or start == 0 and e.name == b2:
             start_time = time.time()
             start = 1
               
