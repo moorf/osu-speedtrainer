@@ -5,7 +5,7 @@ import os
 clicks = 0
 alternate = 0
 alternate2 = 0
-fail = 0    
+fail = 1    
 start = 0
 time_window = 1000
 start_time = 0
@@ -38,7 +38,9 @@ def main():
     
     start_time = time.time()
     while start<2:
-        if restart:
+        if fail<1:
+            time.sleep(0.0005)
+        elif restart:
             os.system('clear')
             print(f"Press the buttons alternately at {bpm} BPM. You have {time_window:.2f} ms to press the next button. Buttons: {b1} {b2}.")
                 
@@ -53,8 +55,7 @@ def main():
             hook = keyboard.on_press(check_for_keys)
             restart = False
             
-            while fail<1:
-                time.sleep(0)
+
             
 def restarter(e):       
     global clicks, alternate, alternate2, fail, start, time_window, start_time, error, b1,b2, late, restart, hook, quitbutton, restartbutton
