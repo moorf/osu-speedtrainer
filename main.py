@@ -109,12 +109,12 @@ def erroroutput():
     if milliseconds>time_window:
         error+=1
         late = milliseconds - time_window
-        print(f"-----   {milliseconds}")
+        print(f"-----   {milliseconds-int(time_window)}")
                 
     else:
         error=0
         late = 0
-        print(milliseconds)
+        print(int(time_window)-milliseconds)
     if error == 3 or late>punishmentms:
         print(f"Too late. Clicks: {clicks}.      {quitbutton} to quit,  {restartbutton} to restart.  {bpmbutton} to change bpm.")
         fail=1
