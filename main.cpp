@@ -78,6 +78,17 @@ int chartoint(char character) {
 		return 60;
 	}
 }
+char inttochar(int character) {
+	if (character >= 1 && character <= 26) {
+		return character + 'a' - 1;
+	}
+	else if (character >= 27 && character <= 37) {
+		return character + '0' - 27;
+	}
+	else if (character == 60) {
+		return '`';
+	}
+}
 void read_config(const std::string& filename) {
 	try {
 		std::ifstream f(filename);
@@ -238,7 +249,7 @@ int main()
 	end_loop:
 		al_clear_to_color(al_map_rgb(0, 0, 0));
 		al_flip_display();
-		std::cout << "Q to quit, R to restart, B to change bpm" << std::endl;
+		std::cout << inttochar(quitbutton) << " to quit, " << inttochar(restartbutton) << " to restart, " << inttochar(bpmbutton) << " to change bpm" << std::endl;
 		while (true) {
 			ALLEGRO_EVENT event;
 			al_wait_for_event(event_queue, &event);
