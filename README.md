@@ -7,6 +7,7 @@ type bpm inside the console too (will fix)
 
 
 **config file values in order:**
+
 button1
 button2
 bpm
